@@ -61,7 +61,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Then enable IIS by opening the control panel and going to " Turn Windows Features On or Off". Then scroll down to locate ISS select the box next to it then expand this section and go to Word Wide Web services > Application Develpoment Features > CGI and selecte CGI then click OK to confirm these changes. 
 
 
 
@@ -70,7 +70,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next install PHP manager just right click and install nothing special to do here. 
 
 
 
@@ -81,7 +81,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next install the rewrite module and configure the enviroment
 
 
 
@@ -90,7 +90,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Then create a folder in your maiun C drive on the computer labed PHP 
 
 
 
@@ -99,7 +99,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Locate the "PHP 7.3.8 php-7.3.8-nts-Win32-VC15-x86.zip" unzip it and move its contents to the PHP file you made on your C Drive
 
 
 
@@ -109,7 +109,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next install the VC_redist.x86.exe 
 
 
 
@@ -123,13 +123,10 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
-
 ![image](https://github.com/user-attachments/assets/6957f61c-e505-44e4-9918-77407e8b61ec)
 
 
-
-
+Here it is asking for a unser name & password for the sake of the exsercies we will keep it simple and set Root for our password and user names. Thne select execute
 
 
 
@@ -137,8 +134,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 ![image](https://github.com/user-attachments/assets/a6f0bdfe-ce33-472d-b771-42f494ede237)
 
-
-
+Next open IIS Manager as a Admin you can search for this in the start menu then right click in the IIS Manager. Select osTicket, then select new PHP manager, then select the PHP-cgi files
 
 
 
@@ -148,7 +144,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 ![image](https://github.com/user-attachments/assets/2c744605-0ba4-4233-9ad2-2585b4e59f40)
 
-
+Then back in the main menu to PHP we select osTicket, and on the right side we restart the server
 
 
 
@@ -161,13 +157,13 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next, unzip osTicket-v1.15.8. And copy and paste all of the contents from that file into C:\inetpub\wwwroot
 
 
 
 ![image](https://github.com/user-attachments/assets/6b8cf0df-475b-4d7f-a26f-556086ddee1b)
 
-
+ Be sure to rename this folder to osTicket 
 
 
 
@@ -182,7 +178,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next from the IIS manager menu, select osTicet > Sites > Default Web Sites > osTicekt > bwrose 
 
 
 
@@ -203,7 +199,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Once in PHP manager enable the extensions I have pointed to with the arrows then refresh the server and verify the extions are enabled
 
 
 
@@ -212,7 +208,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next go to C:> inetpub> wwwroot > osTicket> include> ost-sampleconfig.php and rename is too "ost-config.php" in the same directory 
 
 
 
@@ -221,7 +217,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Then right click the file and select properties in the security tab and disable inheritance , remove all exsisting permissions 
 
 
 
@@ -230,7 +226,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+and give everyone full access 
 
 
 
@@ -241,8 +237,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
-
+Next continue with  the osTicket setup in our browser by clicking “Continue”. We assign a name of our choice to our helpdesk, and select a default email address to receive customer-submitted ticket notifications.
 
 
 
@@ -251,7 +246,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next we will install HeidiSQL once installed 
 
 
 
@@ -267,7 +262,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+open it and create a new session 
 
 
 
@@ -280,7 +275,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+It will ask for a password and user name , use root for this
 
 
 
@@ -292,7 +287,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
+Next create a database named osTicket
 
 
 
@@ -302,8 +297,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
-
+With your SQL database named osTicket and your user name and password as root select continue 
 
 
 
@@ -320,8 +314,7 @@ After you are logged into the VM we will go to the installation file for Os-Tick
 
 
 
-
-
+Congrats, you have installed osTicke.t There are still a few things we must do inside the program, with giving certain users different abilities within the system but for now you have installed a ticket creation and resolution system! 
 
 
 
