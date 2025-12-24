@@ -2,33 +2,59 @@
   <img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket help desk logo"/>
 </p>
 
-<h1>osTicket – Prerequisites and Installation</h1>
+
+<h1>osTicket Installation & Environment Setup</h1>
 
 <p>
-This tutorial outlines the prerequisites and step-by-step installation of the open-source help desk ticketing system, osTicket.
+Deployed and configured the <strong>osTicket</strong> open-source help desk system within a Microsoft Azure virtual machine environment.  
+This project demonstrates hands-on experience with virtual infrastructure, Windows system configuration, IIS web services, PHP integration, and database connectivity.
 </p>
 
-<h2>Environments and Technologies Used</h2>
+<h2>Project Overview</h2>
+
+<ul>
+  <li>Provisioned a Windows 10 Pro virtual machine in Microsoft Azure</li>
+  <li>Configured IIS to host a PHP-based web application</li>
+  <li>Installed and integrated PHP with IIS using PHP Manager</li>
+  <li>Configured MySQL database connectivity using HeidiSQL</li>
+  <li>Deployed osTicket and validated full web-based functionality</li>
+</ul>
+
+<h2>Technologies & Tools Used</h2>
 
 <ul>
   <li>Microsoft Azure (Virtual Machines)</li>
-  <li>Remote Desktop Protocol (RDP)</li>
+  <li>Windows 10 Pro (21H2)</li>
   <li>Internet Information Services (IIS)</li>
+  <li>PHP 7.3</li>
+  <li>MySQL / HeidiSQL</li>
+  <li>Remote Desktop Protocol (RDP)</li>
 </ul>
 
-<h2>Operating Systems Used</h2>
+<h2>Key Technical Skills Demonstrated</h2>
 
 <ul>
-  <li>Windows 10 Pro (Version 21H2)</li>
+  <li>Cloud VM provisioning and remote administration</li>
+  <li>Web server configuration and feature enablement (CGI, URL Rewrite)</li>
+  <li>PHP environment setup and IIS integration</li>
+  <li>Database creation and application connectivity</li>
+  <li>File system permissions and basic security configuration</li>
+  <li>Web application deployment and troubleshooting</li>
 </ul>
 
-<h2>List of Prerequisites</h2>
+<h2>Outcome</h2>
 
-<ul>
-  <li>Azure Virtual Machine</li>
-  <li>osTicket Installation Files</li>
-  <li>HeidiSQL</li>
-</ul>
+<p>
+Successfully deployed a fully functional osTicket help desk system accessible through a web browser.  
+The environment supports ticket creation, database storage, and web-based administration, forming the foundation for a real-world IT support workflow.
+</p>
+
+<hr />
+
+<p>
+<strong>Note:</strong> A detailed, step-by-step installation walkthrough with screenshots is provided below for documentation and learning purposes.
+</p>
+
 
 <h2>Installation Steps</h2>
 
