@@ -10,69 +10,27 @@ Deployed and configured the <strong>osTicket</strong> open-source help desk syst
 This project demonstrates hands-on experience with virtual infrastructure, Windows system configuration, IIS web services, PHP integration, and database connectivity.
 </p>
 
-<h2>Project Overview</h2>
 
-<ul>
-  <li>Provisioned a Windows 10 Pro virtual machine in Microsoft Azure</li>
-  <li>Configured IIS to host a PHP-based web application</li>
-  <li>Installed and integrated PHP with IIS using PHP Manager</li>
-  <li>Configured MySQL database connectivity using HeidiSQL</li>
-  <li>Deployed osTicket and validated full web-based functionality</li>
-</ul>
-
-<h2>Technologies & Tools Used</h2>
-
-<ul>
-  <li>Microsoft Azure (Virtual Machines)</li>
-  <li>Windows 10 Pro (21H2)</li>
-  <li>Internet Information Services (IIS)</li>
-  <li>PHP 7.3</li>
-  <li>MySQL / HeidiSQL</li>
-  <li>Remote Desktop Protocol (RDP)</li>
-</ul>
-
-<h2>Key Technical Skills Demonstrated</h2>
-
-<ul>
-  <li>Cloud VM provisioning and remote administration</li>
-  <li>Web server configuration and feature enablement (CGI, URL Rewrite)</li>
-  <li>PHP environment setup and IIS integration</li>
-  <li>Database creation and application connectivity</li>
-  <li>File system permissions and basic security configuration</li>
-  <li>Web application deployment and troubleshooting</li>
-</ul>
-
-<h2>Outcome</h2>
-
-<p>
-Successfully deployed a fully functional osTicket help desk system accessible through a web browser.  
-The environment supports ticket creation, database storage, and web-based administration, forming the foundation for a real-world IT support workflow.
-</p>
-
-<hr />
-
-<p>
-<strong>Note:</strong> A detailed, step-by-step installation walkthrough with screenshots is provided below for documentation and learning purposes.
-</p>
 
 
 <h2>Installation Steps</h2>
+<p>
+1st step , create a new Azure Virtual Machine. Name it something descriptive, such as <strong>osTicket-VM</strong>.  
+Select <strong>Windows 10 Pro</strong> with <strong>2 vCPUs</strong>, check the licensing confirmation box, and proceed with creating the VM.
+</p>
 
 <p>
   <img src="https://github.com/user-attachments/assets/d567bc53-7bcd-498d-9ac2-e1df0ac851fa" alt="Azure portal showing virtual machine creation screen"/>
 </p>
 
-<p>
-First, create a new Azure Virtual Machine. Name it something descriptive, such as <strong>osTicket-VM</strong>.  
-Select <strong>Windows 10 Pro</strong> with <strong>2 vCPUs</strong>, check the licensing confirmation box, and proceed with creating the VM.
+2nd Once the VM deployment is complete, open the Remote Desktop application and connect using the VM’s public IP address.
 </p>
-
 <p>
   <img src="https://github.com/user-attachments/assets/b5a7a6b2-8d84-40fd-ad6c-49eb55e17560" alt="Azure virtual machine deployment summary"/>
 </p>
 
 <p>
-Once the VM deployment is complete, open the Remote Desktop application and connect using the VM’s public IP address.
+3rd After logging into the VM, locate the osTicket installation files, unzip them, and begin the installation process.
 </p>
 
 <p>
@@ -80,7 +38,14 @@ Once the VM deployment is complete, open the Remote Desktop application and conn
 </p>
 
 <p>
-After logging into the VM, locate the osTicket installation files, unzip them, and begin the installation process.
+4th Enable IIS by opening the Control Panel and selecting <strong>Turn Windows features on or off</strong>.  
+Locate <strong>Internet Information Services (IIS)</strong>, enable it, then navigate to: <p>
+<strong>World Wide Web Services → Application Development Features → CGI</strong>
+</p>
+
+<p>
+Enable CGI and click <strong>OK</strong> to apply the changes.
+</p>
 </p>
 
 <p>
@@ -88,24 +53,14 @@ After logging into the VM, locate the osTicket installation files, unzip them, a
 </p>
 
 <p>
-Enable IIS by opening the Control Panel and selecting <strong>Turn Windows features on or off</strong>.  
-Locate <strong>Internet Information Services (IIS)</strong>, enable it, then navigate to:
-</p>
-
-<p>
-<strong>World Wide Web Services → Application Development Features → CGI</strong>
-</p>
-
-<p>
-Enable CGI and click <strong>OK</strong> to apply the changes.
+5th Next, install <strong>PHP Manager for IIS</strong> by right-clicking the installer and selecting <strong>Install</strong>.
 </p>
 
 <p>
   <img src="https://github.com/user-attachments/assets/dc04267c-9a3f-451a-b7f4-f139f16baf6e" alt="Windows Features menu with IIS and CGI enabled"/>
 </p>
-
 <p>
-Next, install <strong>PHP Manager for IIS</strong> by right-clicking the installer and selecting <strong>Install</strong>.
+6th Install the <strong>URL Rewrite Module</strong> and configure the environment as required.
 </p>
 
 <p>
@@ -113,7 +68,7 @@ Next, install <strong>PHP Manager for IIS</strong> by right-clicking the install
 </p>
 
 <p>
-Install the <strong>URL Rewrite Module</strong> and configure the environment as required.
+6th Create a new folder named <strong>PHP</strong> in the root of the <strong>C:\</strong> drive.
 </p>
 
 <p>
@@ -121,39 +76,35 @@ Install the <strong>URL Rewrite Module</strong> and configure the environment as
 </p>
 
 <p>
-Create a new folder named <strong>PHP</strong> in the root of the <strong>C:\</strong> drive.
+7th Locate <strong>php-7.3.8-nts-Win32-VC15-x86.zip</strong>, extract it, and move its contents into the newly created <strong>C:\PHP</strong> directory.
 </p>
+
 
 <p>
   <img src="https://github.com/user-attachments/assets/38f22ee2-d8e6-4560-98c6-1368bd1e8205" alt="C drive directory showing newly created PHP folder"/>
 </p>
 
 <p>
-Locate <strong>php-7.3.8-nts-Win32-VC15-x86.zip</strong>, extract it, and move its contents into the newly created <strong>C:\PHP</strong> directory.
+8th Install <strong>VC_redist.x86.exe</strong>.
 </p>
-
 <p>
   <img src="https://github.com/user-attachments/assets/f790415d-ac80-4161-8744-c2cfd6e1293a" alt="Extracted PHP files inside C PHP directory"/>
 </p>
-
 <p>
-Install <strong>VC_redist.x86.exe</strong>.
+9th When prompted for database credentials during setup, use <strong>root</strong> as both the username and password for this lab environment, then click <strong>Execute</strong>.
 </p>
-
 <p>
   <img src="https://github.com/user-attachments/assets/51616472-1c9f-47f2-bc4a-30e0574c5f1f" alt="Visual C++ Redistributable installation window"/>
 </p>
 
-<p>
-When prompted for database credentials during setup, use <strong>root</strong> as both the username and password for this lab environment, then click <strong>Execute</strong>.
-</p>
+
 
 <p>
   <img src="https://github.com/user-attachments/assets/6957f61c-e505-44e4-9918-77407e8b61ec" alt="Database credential prompt during installation"/>
 </p>
 
 <p>
-Open <strong>IIS Manager</strong> as an administrator.  
+10th Open <strong>IIS Manager</strong> as an administrator.  
 Select <strong>osTicket</strong>, then open <strong>PHP Manager</strong> and register the <strong>php-cgi.exe</strong> file.
 </p>
 
